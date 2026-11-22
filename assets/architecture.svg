@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="TalentFlow AI system architecture">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06112A"/><stop offset="1" stop-color="#121a44"/></linearGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#94A3B8"/></marker>
+  </defs>
+  <rect width="1200" height="560" rx="22" fill="url(#bg)"/>
+  <g font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="40" y="50" font-size="13" font-weight="700" letter-spacing="3" fill="#34D399">TALENTFLOW AI · SYSTEM ARCHITECTURE</text>
+    <text x="40" y="78" font-size="22" font-weight="800" fill="#F8FAFC">From a CSV to aggregate, privacy-safe insight</text>
+
+    <!-- column labels -->
+    <g font-size="12" font-weight="700" letter-spacing="1.5" fill="#64748B">
+      <text x="40" y="122">INPUT</text><text x="310" y="122">VALIDATION</text><text x="560" y="122">ANALYTICS CORE · talentflow/core.py</text><text x="930" y="122">STREAMLIT APP · app.py</text>
+    </g>
+
+    <!-- inputs -->
+    <g>
+      <rect x="40" y="140" width="230" height="80" rx="14" fill="#10B981" fill-opacity=".14" stroke="#10B981"/>
+      <text x="58" y="172" font-size="16" font-weight="700" fill="#A7F3D0">Synthetic generator</text>
+      <text x="58" y="196" font-size="12.5" fill="#CBD5E1">fixed seed · 6 features + year</text>
+      <rect x="40" y="240" width="230" height="80" rx="14" fill="#06B6D4" fill-opacity=".14" stroke="#06B6D4"/>
+      <text x="58" y="272" font-size="16" font-weight="700" fill="#A5F3FC">Anonymised CSV upload</text>
+      <text x="58" y="296" font-size="12.5" fill="#CBD5E1">≤ 10 MB · session memory only</text>
+    </g>
+
+    <!-- validation -->
+    <rect x="310" y="140" width="220" height="180" rx="14" fill="#0F2347" stroke="#94A3B8" stroke-opacity=".45"/>
+    <text x="328" y="170" font-size="16" font-weight="700" fill="#F8FAFC">prepare()</text>
+    <g font-size="12.5" fill="#CBD5E1">
+      <text x="328" y="196">• map common header names</text>
+      <text x="328" y="218">• ignore protected &amp; ID columns</text>
+      <text x="328" y="240">• Yes/No → 1/0 outcome</text>
+      <text x="328" y="262">• drop + count invalid rows</text>
+      <text x="328" y="284">• ≥ 100 rows, ≥ 10 per outcome</text>
+      <text x="328" y="306">• validation report</text>
+    </g>
+
+    <!-- core -->
+    <g>
+      <rect x="560" y="140" width="340" height="56" rx="12" fill="#8B5CF6" fill-opacity=".16" stroke="#8B5CF6"/>
+      <text x="578" y="164" font-size="15" font-weight="700" fill="#DDD6FE">Aggregates &amp; suppression</text>
+      <text x="578" y="184" font-size="11.5" fill="#CBD5E1">group_rates · band_rates · yearly · heatmap · Wilson CI</text>
+      <rect x="560" y="206" width="340" height="56" rx="12" fill="#8B5CF6" fill-opacity=".16" stroke="#8B5CF6"/>
+      <text x="578" y="230" font-size="15" font-weight="700" fill="#DDD6FE">evaluate()</text>
+      <text x="578" y="250" font-size="12" fill="#CBD5E1">holdout · CV · baselines · threshold · calibration</text>
+      <rect x="560" y="272" width="340" height="56" rx="12" fill="#8B5CF6" fill-opacity=".16" stroke="#8B5CF6"/>
+      <text x="578" y="296" font-size="15" font-weight="700" fill="#DDD6FE">scenario_detail() · sensitivity()</text>
+      <text x="578" y="316" font-size="11.5" fill="#CBD5E1">mean model score per department, never per person</text>
+    </g>
+
+    <!-- app -->
+    <rect x="930" y="140" width="245" height="250" rx="14" fill="#0F2347" stroke="#10B981" stroke-opacity=".7"/>
+    <g font-size="13" fill="#E2E8F0">
+      <text x="950" y="170">🏢 Workforce Command Center</text>
+      <text x="950" y="200">🔁 Retention Intelligence</text>
+      <text x="950" y="230">🏬 Department Analytics</text>
+      <text x="950" y="260">💡 Engagement Intelligence</text>
+      <text x="950" y="290">🎛️ What-If Simulator</text>
+      <text x="950" y="320">📈 Model Performance</text>
+      <text x="950" y="350">🗂️ Data Explorer</text>
+    </g>
+    <text x="950" y="378" font-size="11.5" fill="#64748B">light / dark themes · Plotly charts</text>
+
+    <!-- arrows -->
+    <g stroke="#94A3B8" stroke-width="2" fill="none" marker-end="url(#ar)">
+      <path d="M270 180 H 306"/><path d="M270 280 H 306"/>
+      <path d="M530 168 H 556"/><path d="M530 234 H 556"/><path d="M530 300 H 556"/>
+      <path d="M900 168 H 926"/><path d="M900 234 H 926"/><path d="M900 300 H 926"/>
+    </g>
+
+    <!-- caching / privacy band -->
+    <rect x="40" y="420" width="1120" height="110" rx="16" fill="#F59E0B" fill-opacity=".08" stroke="#F59E0B" stroke-opacity=".5"/>
+    <text x="62" y="452" font-size="14" font-weight="700" letter-spacing="1" fill="#FDE68A">CACHING, ISOLATION AND PRIVACY</text>
+    <g font-size="13" fill="#E2E8F0">
+      <text x="62" y="480">• Demo data and its evaluation: shared cache (st.cache_data / st.cache_resource, bounded entries, 1-hour TTL).</text>
+      <text x="62" y="504">• Uploaded data and its model: st.session_state only — never a shared cache, never written to disk, gone when the tab closes.</text>
+      <text x="62" y="524" fill="#CBD5E1">• Every chart, table and download hides groups under the privacy threshold (10 by default, adjustable upward only).</text>
+    </g>
+  </g>
+</svg>

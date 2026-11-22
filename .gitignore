@@ -1,3 +1,35 @@
+# Python
 __pycache__/
+*.py[cod]
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Environments and secrets
 .venv/
+venv/
+env/
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Local data and generated reports (never commit real employee data)
+data/
+uploads/
+reports/
+*.xlsx
+private_*.csv
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Test artefacts
+test-results/
+playwright-report/
+streamlit.log

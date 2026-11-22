@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-label="Leakage-safe model evaluation workflow">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06112A"/><stop offset="1" stop-color="#151b45"/></linearGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#94A3B8"/></marker>
+  </defs>
+  <rect width="1200" height="430" rx="22" fill="url(#bg)"/>
+  <g font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="40" y="50" font-size="13" font-weight="700" letter-spacing="3" fill="#22D3EE">LEAKAGE-SAFE EVALUATION</text>
+    <text x="40" y="78" font-size="22" font-weight="800" fill="#F8FAFC">The holdout is split off first and touched exactly once</text>
+
+    <rect x="40" y="120" width="180" height="90" rx="14" fill="#0F2347" stroke="#94A3B8" stroke-opacity=".5"/>
+    <text x="58" y="152" font-size="15" font-weight="700" fill="#F8FAFC">Clean records</text>
+    <text x="58" y="176" font-size="12.5" fill="#CBD5E1">6 features + outcome</text>
+    <text x="58" y="196" font-size="12.5" fill="#CBD5E1">(year kept for trends)</text>
+
+    <rect x="270" y="105" width="210" height="60" rx="12" fill="#10B981" fill-opacity=".16" stroke="#10B981"/>
+    <text x="288" y="131" font-size="15" font-weight="700" fill="#A7F3D0">Training rows · 75%</text>
+    <text x="288" y="151" font-size="12" fill="#CBD5E1">stratified, seed 42</text>
+    <rect x="270" y="185" width="210" height="60" rx="12" fill="#F43F5E" fill-opacity=".14" stroke="#F43F5E"/>
+    <text x="288" y="211" font-size="15" font-weight="700" fill="#FECDD3">Holdout rows · 25%</text>
+    <text x="288" y="231" font-size="12" fill="#CBD5E1">locked until the end</text>
+
+    <rect x="530" y="95" width="330" height="80" rx="12" fill="#8B5CF6" fill-opacity=".16" stroke="#8B5CF6"/>
+    <text x="548" y="121" font-size="15" font-weight="700" fill="#DDD6FE">5-fold CV on training rows</text>
+    <text x="548" y="143" font-size="12" fill="#CBD5E1">out-of-fold scores → CV AUC ± sd</text>
+    <text x="548" y="161" font-size="12" fill="#CBD5E1">→ F1-maximising threshold (no holdout)</text>
+    <rect x="530" y="190" width="330" height="56" rx="12" fill="#06B6D4" fill-opacity=".14" stroke="#06B6D4"/>
+    <text x="548" y="214" font-size="15" font-weight="700" fill="#A5F3FC">Fit pipeline on all training rows</text>
+    <text x="548" y="234" font-size="12" fill="#CBD5E1">one-hot dept + StandardScaler → logistic regression</text>
+
+    <rect x="890" y="120" width="275" height="126" rx="14" fill="#0F2347" stroke="#F59E0B" stroke-opacity=".7"/>
+    <text x="906" y="150" font-size="15" font-weight="700" fill="#FDE68A">Score the holdout once</text>
+    <g font-size="12.5" fill="#E2E8F0">
+      <text x="906" y="174">ROC-AUC · average precision · Brier</text>
+      <text x="906" y="196">precision · recall · F1 · confusion</text>
+      <text x="906" y="218">calibration · permutation importance</text>
+      <text x="906" y="238" fill="#94A3B8">same holdout for every baseline</text>
+    </g>
+
+    <g stroke="#94A3B8" stroke-width="2" fill="none" marker-end="url(#ar)">
+      <path d="M220 150 C 245 150, 245 135, 266 135"/><path d="M220 180 C 245 180, 245 215, 266 215"/>
+      <path d="M480 135 H 526"/><path d="M695 175 V 186"/><path d="M860 218 H 886"/>
+      <path d="M480 228 C 560 290, 940 290, 1020 250" stroke-dasharray="6 6"/>
+    </g>
+
+    <g font-size="13" fill="#CBD5E1">
+      <rect x="40" y="300" width="360" height="96" rx="14" fill="#10B981" fill-opacity=".08" stroke="#10B981" stroke-opacity=".5"/>
+      <text x="58" y="328" font-weight="700" fill="#A7F3D0">Baselines</text>
+      <text x="58" y="352">Prior (always the training turnover rate)</text>
+      <text x="58" y="374">Engagement-only rule · original unscaled LR</text>
+      <rect x="420" y="300" width="360" height="96" rx="14" fill="#8B5CF6" fill-opacity=".08" stroke="#8B5CF6" stroke-opacity=".5"/>
+      <text x="438" y="328" font-weight="700" fill="#DDD6FE">Time-ordered check</text>
+      <text x="438" y="352">train on 2021–2024, test on 2025</text>
+      <text x="438" y="374">ranking and calibration drift reported</text>
+      <rect x="800" y="300" width="360" height="96" rx="14" fill="#F59E0B" fill-opacity=".08" stroke="#F59E0B" stroke-opacity=".5"/>
+      <text x="818" y="328" font-weight="700" fill="#FDE68A">Tested in CI</text>
+      <text x="818" y="352">scrambling holdout features leaves the</text>
+      <text x="818" y="374">threshold and coefficients unchanged</text>
+    </g>
+  </g>
+</svg>
