@@ -1,6 +1,6 @@
 # TalentFlow AI: portfolio and announcement material
 
-Live app: LIVE_URL
+Live app: https://talentflow-ai-zubairlabs.streamlit.app
 Code: https://github.com/muhammadzubair-data/talentflow-ai-workforce-retention-intelligence
 
 All figures below come from the synthetic demo dataset. They show the method, not real-world accuracy.
@@ -66,7 +66,7 @@ Privacy is built in: no individual scores, groups under 10 hidden, uploads never
 
 Built with Python, scikit-learn, Plotly and Streamlit. All results are from synthetic data.
 
-Live demo: LIVE_URL
+Live demo: https://talentflow-ai-zubairlabs.streamlit.app
 Code: https://github.com/muhammadzubair-data/talentflow-ai-workforce-retention-intelligence
 
 #PeopleAnalytics #HRAnalytics #DataScience #MachineLearning #ResponsibleAI #Streamlit #Python
@@ -101,7 +101,7 @@ from 32% to 68%.
 
 Tools: Python, pandas, scikit-learn, Plotly, Streamlit, pytest, Playwright, GitHub Actions
 
-Live demo: LIVE_URL
+Live demo: https://talentflow-ai-zubairlabs.streamlit.app
 Code: https://github.com/muhammadzubair-data/talentflow-ai-workforce-retention-intelligence
 
 ---
@@ -145,4 +145,4 @@ with it, without ever scoring individuals. It includes:
 Privacy is the default: groups under 10 are hidden and uploads stay in the browser session. Built with Python,
 scikit-learn, Plotly and Streamlit, with automated tests and CI. Demonstrated on synthetic data.
 
-[Live demo](LIVE_URL) · [Source code](https://github.com/muhammadzubair-data/talentflow-ai-workforce-retention-intelligence)
+[Live demo](https://talentflow-ai-zubairlabs.streamlit.app) · [Source code](https://github.com/muhammadzubair-data/talentflow-ai-workforce-retention-intelligence)

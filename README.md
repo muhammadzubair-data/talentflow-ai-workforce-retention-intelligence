@@ -16,7 +16,10 @@
   <img alt="Responsible AI" src="https://img.shields.io/badge/responsible%20AI-aggregate%20only-8B5CF6">
 </p>
 
-<p align="center"><i>Live demo: the link and badge are added here after the deployed app has been verified in a browser.</i></p>
+<p align="center">
+  <a href="https://talentflow-ai-zubairlabs.streamlit.app"><img alt="Open in Streamlit" src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg"></a>
+  &nbsp;<a href="https://talentflow-ai-zubairlabs.streamlit.app"><b>talentflow-ai-zubairlabs.streamlit.app</b></a>
+</p>
 
 > [!IMPORTANT]
 > TalentFlow AI runs on **synthetic** data by default. Its model metrics show that the method works end to end; they are
@@ -196,7 +199,7 @@ upload names, IDs or other personal data.
 
 ## 9. Dashboard screenshots
 
-All images below are **real screenshots** of the running app. The illustrations in sections 4 and 6 are
+All images below are **real screenshots** of the running app (local run; live-site screenshots are in section 14). The illustrations in sections 4 and 6 are
 hand-made diagrams, not screenshots.
 
 | | |
@@ -331,6 +334,23 @@ Streamlit Community Cloud (free):
 2. Repository `muhammadzubair-data/talentflow-ai-workforce-retention-intelligence`, branch `main`, main file `app.py`.
 3. **Advanced settings → Python 3.12.** No secrets are needed.
 4. Deploy. The first visit trains and evaluates the demo model in a few seconds; the result is cached for an hour.
+
+**Live deployment (verified 22 Nov 2026):** [talentflow-ai-zubairlabs.streamlit.app](https://talentflow-ai-zubairlabs.streamlit.app)
+- **Settings:** repository `muhammadzubair-data/talentflow-ai-workforce-retention-intelligence`, branch `main`, entry point `app.py`, Python 3.12, no secrets.
+- **Live checks:** all 7 pages load in light and dark themes.
+  - Model Performance shows the same numbers as section 10.
+  - The threshold explorer at 0.50 shows 339 / 13 / 67 / 31.
+  - The simulator scoped to Sales with engagement +1 lowers only Sales (organisation −1.63 points).
+- **Live upload:** the messy sample keeps 1,187 of 1,200 rows; Gender/Age and EmployeeID are ignored.
+  - The retrained model shows ROC-AUC 0.748, matching `scripts/evaluate.py` on the same file.
+  - The upload persisted across pages via the sidebar, and "Remove upload" restored the demo.
+  - A file without `left` showed a clear error.
+- **Downloads:** these are exercised by the CI browser test rather than clicked on the live site.
+
+| | | |
+|:--:|:--:|:--:|
+| <img src="assets/screenshots/live-simulator-sales-scope.png" alt="Live: simulator scoped to Sales"> | <img src="assets/screenshots/live-upload-validation-dark.png" alt="Live: upload validation, dark"> | <img src="assets/screenshots/live-departments-upload-dark.png" alt="Live: departments on uploaded data, dark"> |
+| Live · Sales-only scenario | Live · messy upload validated | Live · departments on the upload |
 
 Notes:
 - Demo results use `st.cache_data` / `st.cache_resource` with bounded entries.
